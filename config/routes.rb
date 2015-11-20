@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :businesses
   resources :reviews
   devise_for :users
+  root 'businesses#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
