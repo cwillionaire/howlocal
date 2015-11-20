@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  review_id_id: 
+  user_id_id: 
+  name: 
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  average_rating: 1.5
+  description: MyString
+
+two:
+  review_id_id: 
+  user_id_id: 
+  name: 
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  average_rating: 1.5
+  description: MyString
