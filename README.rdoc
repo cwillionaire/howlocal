@@ -26,3 +26,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+11/20/15 8:14 AM [Ben Akroyd]:
+    Due to being unable to merge Ben_Business_Scaffold git branch into origin master yesterday, I recereated the scaffold directly within origin
+    origin master today.
