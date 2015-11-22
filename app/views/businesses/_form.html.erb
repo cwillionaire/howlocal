@@ -11,13 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :review_id_id %><br>
-    <%= f.text_field :review_id_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id_id %><br>
-    <%= f.text_field :user_id_id %>
+  <div class="field cant-see-me">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, value: current_user.id %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
@@ -39,7 +35,7 @@
     <%= f.label :zip %><br>
     <%= f.number_field :zip %>
   </div>
-  <div class="field">
+  <div class="field cant-see-me">
     <%= f.label :average_rating %><br>
     <%= f.text_field :average_rating %>
   </div>

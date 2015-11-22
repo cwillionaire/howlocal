@@ -1,8 +1,8 @@
 class CreateBusinesses < ActiveRecord::Migration
   def change
     create_table :businesses do |t|
-      t.references :review_id, index: true, foreign_key: true
-      t.references :user_id, index: true, foreign_key: true
+      t.references :review, index: true, foreign_key: true
+      t.references :user, index: true, foreign_key: true
       t.string :name
       t.string :street_address
       t.string :city

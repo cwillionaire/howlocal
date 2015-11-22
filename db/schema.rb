@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119145119) do
+ActiveRecord::Schema.define(version: 20151120162031) do
+
+  create_table "businesses", force: :cascade do |t|
+    t.integer  "review_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.float    "average_rating"
+    t.string   "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "businesses", ["review_id"], name: "index_businesses_on_review_id"
+  add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
 
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
@@ -43,6 +60,7 @@ ActiveRecord::Schema.define(version: 20151119145119) do
     t.string   "location"
     t.boolean  "admin"
     t.boolean  "busi_own"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
