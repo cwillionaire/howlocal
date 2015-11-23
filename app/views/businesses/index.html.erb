@@ -1,41 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Businesses</h1>
+<h1>Businesses Near You</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Review</th>
-      <th>User</th>
-      <th>Name</th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Average rating</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="row">
     <% @businesses.each do |business| %>
-      <tr>
+      <div class="col-md-6">
+        <div class="well">
+        <h1><%= business.name %></h1>
+        <p><%= business.street_address %><br />
+        <%= business.city %>, <%= business.state %> <%= business.zip %></p>
+        <h2>HOLO Score: <%= business.average_rating %></h2>
+        <h4>About <%= business.name %>: <%= business.description %></h4>
         <td><%= business.user_id %></td>
-        <td><%= business.name %></td>
-        <td><%= business.street_address %></td>
-        <td><%= business.city %></td>
-        <td><%= business.state %></td>
-        <td><%= business.zip %></td>
-        <td><%= business.average_rating %></td>
-        <td><%= business.description %></td>
-        <td><%= link_to 'Show', business %></td>
-        <td><%= link_to 'Edit', edit_business_path(business) %></td>
-        <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= link_to 'Show', business %> | 
+        <%= link_to 'Edit', edit_business_path(business) %> | 
+        <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 
