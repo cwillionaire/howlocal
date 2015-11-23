@@ -23,11 +23,11 @@
     <%= f.label :holo_score %><br>
     <%= f.number_field :holo_score %>
   </div>
-  <div class="field cant-see-me">
-    <%= f.label :business_id %><br>
+  <div class="field">                     // BA: This should not be hidden. Rather a dropdown
+    <%= f.label :business_id %><br>       //     menu or autocomplete field is needed
     <%= f.number_field :business_id %>
   </div>
-  <div class="field cant-see-me">
+  <div class="field hidden">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id, value: current_user.id %>
   </div>
