@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :remove_admin_from_users
   resources :businesses
   resources :reviews
   devise_for :users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123182412) do
+ActiveRecord::Schema.define(version: 20151123205345) do
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "review_id"
@@ -59,8 +59,6 @@ ActiveRecord::Schema.define(version: 20151123182412) do
     t.string   "name"
     t.string   "username"
     t.string   "location"
-    t.boolean  "admin"
-    t.boolean  "busi_own"
     t.string   "role"
   end
 
