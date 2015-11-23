@@ -16,3 +16,13 @@
 /*.cant-see-me {
 	display: none;
 }*/
+
+.glyphicon-star {
+	color: green;
+	font-size: 20px;
+}
+
+.glyphicon-star-empty {
+	color: green;
+	font-size: 20px;
+}

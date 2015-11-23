@@ -21,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :holo_score %><br>
-    <%= f.number_field :holo_score %>
+    <%= f.select :holo_score, ["0","1","2","3","4","5","6","7","8","9","10"], {:include_blank => 'Rating'} %>
   </div>
   <div class="field cant-see-me">
     <%= f.label :business_id %><br>
-    <%= f.number_field :business_id %>
+    <%= f.number_field :business_id, value: @business.id %>
   </div>
   <div class="field cant-see-me">
     <%= f.label :user_id %><br>
