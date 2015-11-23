@@ -13,7 +13,7 @@ class BusinessesController < ApplicationController
   # GET /businesses/1.json
   def show
     @users = User.all
-    @reviews = Review.all
+    @review = Review.new
     @businesses = Business.all
   end
 
