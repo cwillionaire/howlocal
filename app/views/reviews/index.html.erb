@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Title</th>
       <th>Comment</th>
       <th>Holo score</th>
       <th>User</th>
@@ -15,6 +16,7 @@
   <tbody>s
     <% @reviews.each do |review| %>
       <tr>
+        <td><%= review.title %></td>
         <td><%= review.comment %></td>
         <td><%= review.holo_score %></td>
         <td><%= review.user.username %></td>

@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1.json
   def show
     @user = User.all
+    @business = Business.all
   end
 
   # GET /reviews/new
@@ -71,6 +72,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:comment, :holo_score, :business_id, :user_id)
+      params.require(:review).permit(:comment, :holo_score, :business_id, :user_id, :title)
     end
 end

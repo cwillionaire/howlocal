@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Title:</strong>
+  <%= @review.title %>
+</p>
+<p>
   <strong>Comment:</strong>
   <%= @review.comment %>
 </p>
@@ -12,7 +16,7 @@
 
 <p>
   <strong>Business:</strong>
-  <%= @review.business.name %>
+  <%= @review.business_id %>
 </p>
 
 <p>
