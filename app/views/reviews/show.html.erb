@@ -12,12 +12,12 @@
 
 <p>
   <strong>Business:</strong>
-  <%= @review.business %>
+  <%= @review.business.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <% @review.user_id %>
+  <%= @review.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
