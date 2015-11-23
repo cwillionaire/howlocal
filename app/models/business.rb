@@ -1,4 +1,4 @@
 class Business < ActiveRecord::Base
-  belongs_to :review_id
-  belongs_to :user_id
+  has_many :reviews
+  belongs_to :user
 end

@@ -1,15 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p class="cant-see-me">
-  <strong>Review:</strong>
-  <%= @business.review_id %>
-</p>
-
-<p class="cant-see-me">
-  <strong>User:</strong>
-  <%= @business.user_id %>
-</p>
-
 <p>
   <strong>Name:</strong>
   <%= @business.name %>
@@ -44,6 +34,8 @@
   <strong>Description:</strong>
   <%= @business.description %>
 </p>
+
+<p> Submitted By: <%= @business.user.username %>
 
 <%= link_to 'Edit', edit_business_path(@business) %> |
 <%= link_to 'Back', businesses_path %>

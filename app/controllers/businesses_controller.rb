@@ -6,11 +6,13 @@ class BusinessesController < ApplicationController
   # GET /businesses.json
   def index
     @businesses = Business.all
+    @user = User.all
   end
 
   # GET /businesses/1
   # GET /businesses/1.json
   def show
+    @users = User.all
   end
 
   # GET /businesses/new
@@ -70,6 +72,6 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:review_id_id, :user_id_id, :name, :street_address, :city, :state, :zip, :average_rating, :description)
+      params.require(:business).permit(:review_id, :user_id, :name, :street_address, :city, :state, :zip, :average_rating, :description)
     end
 end
