@@ -50,7 +50,7 @@
         <p>by:<%= review.user.username %></p>
         <h4><%= link_to 'Show', review %> | 
         <% if can? :update, review %>
-          <%= link_to 'Edit', edit_review_path(review) %>
+          <%= link_to 'Edit', edit_review_path(review) %>  | 
         <% end %>
         <% if can? :destroy, review %>
           <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
