@@ -1,6 +1,9 @@
 <h1>Editing Business</h1>
-
-<%= render 'form' %>
+<% if can? :update, @business %>
+    <%= render 'form' %>
+<% else %>
+    You do not have permission to edit this page
+<% end %>
 
 <%= link_to 'Show', @business %> |
 <%= link_to 'Back', businesses_path %>

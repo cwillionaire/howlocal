@@ -42,6 +42,9 @@
     <%= f.text_field :location, placeholder: "Location" %>
   </div>
   <br />
+     <%= f.label "Account Type" %><br>
+    <%= f.select :role, ["standard", "admin"], 
+         {:include_blank => 'Account Type'}, class: "form-control" %>
   <br />
 
   <div class="actions">
