@@ -1,6 +1,10 @@
 <h1>Editing Review</h1>
 
-<%= render 'form' %>
+<% if can? :update, @review %>
+    <%= render 'form' %>
+<% else %>
+    You do not have permission to edit this review
+<% end %>
 
 <%= link_to 'Show', @review %> |
 <%= link_to 'Back', reviews_path %>

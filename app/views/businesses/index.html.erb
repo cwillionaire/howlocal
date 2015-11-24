@@ -17,7 +17,7 @@
             <p>Created by: <%= business.user_id %></p>
         <%= link_to 'Show', business %> |
         <% if can? :update, business %>
-          <%= link_to 'Edit', edit_business_path(business) %> | 
+           |<%= link_to 'Edit', edit_business_path(business) %> | 
         <% end %>
         <% if can? :destroy, business %>
           <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>

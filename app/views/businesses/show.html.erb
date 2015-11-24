@@ -12,7 +12,9 @@
             <h2>HOLO Score: <%= @business.average_rating %></h2>
             <h4>About <%= @business.name %>: <%= @business.description %></h4>
             <p>Created by: <%= @business.user.username %></p>
-            <%= link_to 'Edit', edit_business_path(@business) %> | 
+            <% if can? :update, @business %>
+              <%= link_to 'Edit', edit_business_path(@business) %> | 
+            <% end %>
             <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %><br>
           </div>
         </div>
@@ -46,7 +48,18 @@
           <h3><%= review.comment %></h3>
           </p>
         <p>by:<%= review.user.username %></p>
-        <h4><%= link_to 'Show', review %> | <%= link_to 'Edit', edit_review_path(review) %> | <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+        <h4><%= link_to 'Show', review %> | 
+        <% if can? :update, review %>
+          <%= link_to 'Edit', edit_review_path(review) %>
+        <% end %>
+        <% if can? :destroy, review %>
+          <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </h4>
+      
+      
+      
+      
       </div>
   </div>
   </div>
