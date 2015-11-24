@@ -42,17 +42,9 @@
     <%= f.text_field :location, placeholder: "Location" %>
   </div>
   <br />
-  <!-- boolean operations -->
-  <div class="field">
-    <%= f.label "Are you an admin?" %><br />
-    <%= f.select :admin, options_for_select([['Yes', true], ['No', false]])%>
-  </div>
-  <br />
-  <!-- boolean operations -->
-  <div class="field">
-    <%= f.label "Are you a business owner?" %><br />
-    <%= f.select :busi_own, options_for_select([['Yes', true], ['No', false]])%>
-  </div>
+     <%= f.label "Account Type" %><br>
+    <%= f.select :role, ["standard", "admin"], 
+         {:include_blank => 'Account Type'}, class: "form-control" %>
   <br />
 
   <div class="actions">
