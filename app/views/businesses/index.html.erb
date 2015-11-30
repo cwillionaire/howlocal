@@ -14,10 +14,10 @@
             <%= business.city %>, <%= business.state %> <%= business.zip %></p>
             <h2>HOLO Score: <%= business.average_rating %></h2>
             <h4>About <%= business.name %>: <%= business.description %></h4>
-            <p>Created by: <%= business.user_id %></p>
+            <p>Created by: <%= business.user.username %></p>
         <%= link_to 'Show', business %> |
         <% if can? :update, business %>
-           |<%= link_to 'Edit', edit_business_path(business) %> | 
+          <%= link_to 'Edit', edit_business_path(business) %> | 
         <% end %>
         <% if can? :destroy, business %>
           <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>
