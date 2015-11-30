@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Reviews</h1>
-
-<% @reviews.each do |review| %>
+<% @business.reviews.each do |review| %>
         <div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -34,7 +30,3 @@
           </div>
         </div>
       <% end %>
-
-<br>
-
-<%= link_to 'New Review', new_review_path %>

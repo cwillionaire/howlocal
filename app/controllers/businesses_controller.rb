@@ -30,7 +30,7 @@ class BusinessesController < ApplicationController
   # POST /businesses.json
   def create
     @business = Business.new(business_params)
-
+    @business.average_rating = 0.0
     respond_to do |format|
       if @business.save
         format.html { redirect_to @business, notice: 'Business was successfully created.' }
@@ -74,6 +74,7 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:review_id, :user_id, :name, :street_address, :city, :state, :zip, :average_rating, :description)
+      params.require(:business).permit(:review_id, :user_id, :name, :street_address, :city, :state, :zip, :average_rating,
+      :description, :documentation)
     end
 end

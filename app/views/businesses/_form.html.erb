@@ -10,8 +10,13 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :documentation %>
+    <%= f.file_field :documentation %>
+  </div>
 
-  <div class="field hidden">
+  <div class="hidden">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id, value: current_user.id %>
   </div>
