@@ -41,4 +41,12 @@ class Ability
     end
   end
   
+  def admin
+    if user.role =="admin"
+      return true
+    else
+      return false
+    end
+  end
+  
 end

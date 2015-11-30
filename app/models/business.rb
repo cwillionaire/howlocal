@@ -2,8 +2,10 @@ class Business < ActiveRecord::Base
   has_many :reviews
   belongs_to :user
   
-  has_attached_file :documentation, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :documentation, content_type: /\Aimage\/.*\Z/
+  # has_attached_file :documentation, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  # validates_attachment_content_type :documentation, content_type: /\Aimage\/.*\Z/
+  has_attached_file :documentation
+  validates_attachment :documentation, :content_type => {:content_type => %w(image/jpeg image/jpg image/png application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document)}
   
   # This method calculates and returns the average holo score for a business
   # when a rating is added or deleted.
