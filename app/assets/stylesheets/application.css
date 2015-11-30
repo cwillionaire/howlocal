@@ -26,3 +26,15 @@
 	color: green;
 	font-size: 20px;
 }
+
+.glyphicon-leaf {
+	color: green;
+	font-size: 20px;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.empty {
+	color: white;
+	font-size: 20px;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
