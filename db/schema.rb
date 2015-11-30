@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123205345) do
+ActiveRecord::Schema.define(version: 20151130191336) do
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "review_id"
@@ -23,8 +23,12 @@ ActiveRecord::Schema.define(version: 20151123205345) do
     t.integer  "zip"
     t.float    "average_rating"
     t.string   "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "documentation_file_name"
+    t.string   "documentation_content_type"
+    t.integer  "documentation_file_size"
+    t.datetime "documentation_updated_at"
   end
 
   add_index "businesses", ["review_id"], name: "index_businesses_on_review_id"
