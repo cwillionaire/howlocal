@@ -21,13 +21,6 @@
   </div>
   <div class="form-group">
     <%= f.label :holo_score %><br>
-<<<<<<< HEAD
-    <%= f.select :holo_score, ["0","1","2","3","4","5","6","7","8","9","10"], {:include_blank => 'Rating'} %>
-  </div>
-  <div class="field cant-see-me">
-    <%= f.label :business_id %><br>
-    <%= f.number_field :business_id, value: @business.id %>
-=======
     <%= f.select :holo_score, ["1","2","3","4","5","6","7","8","9","10"], 
          {:include_blank => 'Rating'}, class: "form-control" %>
   </div>
@@ -35,7 +28,6 @@
     <%= f.label "Business" %><br>         <!--       menu or autocomplete field is needed.-->
     <%= f.select(:business_id, @businesses.collect {|a| [ a.name, a.id ] }, 
          {:include_blank => 'Please select a business'}, class: "form-control") %>
->>>>>>> e546334e7bc67bb17090147812fef9ab8fddc05c
   </div>
   <div class="field hidden">
     <%= f.label :user_id %><br>
