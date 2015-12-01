@@ -33,6 +33,8 @@ class BusinessesController < ApplicationController
     @business.average_rating = 0.0
     respond_to do |format|
       if @business.save
+        @business.address = @business.street_address + " " + @business.city + ", " + @business.state + " " + @business.zip.to_s
+        @business.save
         format.html { redirect_to @business, notice: 'Business was successfully created.' }
         format.json { render :show, status: :created, location: @business }
       else
@@ -47,6 +49,8 @@ class BusinessesController < ApplicationController
   def update
     respond_to do |format|
       if @business.update(business_params)
+        @business.address = @business.street_address + " " + @business.city + ", " + @business.state + " " + @business.zip.to_s
+        @business.save
         format.html { redirect_to @business, notice: 'Business was successfully updated.' }
         format.json { render :show, status: :ok, location: @business }
       else
