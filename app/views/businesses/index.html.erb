@@ -8,7 +8,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h1><%= link_to business.name, business %>
-                <% if business.is_verified %>
+                <% if business.verified? %>
                   <%= image_tag "badge-verified.png" %>
                 <% end %>
             </h1>

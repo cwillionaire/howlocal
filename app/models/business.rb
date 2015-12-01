@@ -1,6 +1,8 @@
 class Business < ActiveRecord::Base
   has_many :reviews
   belongs_to :user
+  geocoded_by :address
+  after_validation :geocode
   
   # has_attached_file :documentation, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   # validates_attachment_content_type :documentation, content_type: /\Aimage\/.*\Z/
@@ -34,7 +36,4 @@ class Business < ActiveRecord::Base
     self.save
   end
   
-  def is_verified()
-    verified
-  end
 end

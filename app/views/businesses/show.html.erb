@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+
   <div class="row">
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h1><%= @business.name %>
-              <% if @business.is_verified %>
+              <% if @business.verified? %>
                 <%= image_tag "badge-verified.png" %>
               <% end %>
             </h1>
           </div>
           <div class="panel-body">
-            <p>Address: <%= @business.street_address %><br />
-            <%= @business.city %>, <%= @business.state %> <%= @business.zip %></p>
+            <p>Address: <%= @business.address %> </p>
             <h2>HOLO Score: <%= @business.average_rating %></h2>
             <h4>About <%= @business.name %>: <%= @business.description %></h4>
             <% if can? :manage, @business%>
@@ -22,6 +22,7 @@
             <% if can? :update, @business %>
               <%= link_to 'Edit', edit_business_path(@business) %> | 
             <% end %>
+            <div id="map-canvas"></div>            <!-- MAP IS HERE-->
             <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %><br>
           </div>
         </div>
@@ -57,11 +58,10 @@
                 <% x.to_i.times do %>
                   <span class="glyphicon glyphicon-leaf empty"></span>
                 <% end %>
-
-
-
+                
               </p>
             </div>
+
             <div class="panel-body">
               <p>
                 <h3><%= review.comment %></h3>
@@ -82,3 +82,7 @@
     </div>
 
 <br>
+<%= javascript_tag do %>
+   latitude = '<%= j @business.latitude.to_s %>';
+   longitude = '<%= j @business.longitude.to_s %>';
+<% end %>

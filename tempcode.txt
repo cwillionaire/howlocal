@@ -1,0 +1,2 @@
+street_address %><br />
+            <%= @business.city %>, <%= @business.state %> <%= @business.zip %></p>

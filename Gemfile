@@ -20,6 +20,8 @@ gem 'cancancan', '~> 1.10'
 # https://github.com/laserlemon/figaro
 gem "figaro"
 
+gem 'geocoder'
+
 gem "paperclip", "~> 4.3"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
