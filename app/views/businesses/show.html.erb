@@ -4,7 +4,11 @@
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h1><%= @business.name %></h1>
+            <h1><%= @business.name %>
+              <% if @business.is_verified %>
+                <%= image_tag "badge-verified.png" %>
+              <% end %>
+            </h1>
           </div>
           <div class="panel-body">
             <p>Address: <%= @business.street_address %><br />

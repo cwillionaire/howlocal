@@ -32,5 +32,9 @@ class Business < ActiveRecord::Base
     new_average = running_sum / self.reviews.length
     self.average_rating = new_average
     self.save
-  end 
+  end
+  
+  def is_verified()
+    verified
+  end
 end

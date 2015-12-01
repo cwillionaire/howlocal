@@ -48,6 +48,12 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+  <% if current_user.role == "admin" %>
+    <div class="field">
+      <%= f.label :verified %>
+      <%= f.check_box :verified %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
