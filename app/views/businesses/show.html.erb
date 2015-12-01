@@ -12,7 +12,8 @@
             </h1>
           </div>
           <div class="panel-body">
-            <p>Address: <%= @business.address %> </p>
+            <p><div id="map-canvas"></div><!-- MAP IS HERE-->
+            Address: <%= @business.address %> </p>
             <h2>HOLO Score: <%= @business.average_rating %></h2>
             <h4>About <%= @business.name %>: <%= @business.description %></h4>
             <% if can? :manage, @business%>
@@ -22,7 +23,6 @@
             <% if can? :update, @business %>
               <%= link_to 'Edit', edit_business_path(@business) %> | 
             <% end %>
-            <div id="map-canvas"></div>            <!-- MAP IS HERE-->
             <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %><br>
           </div>
         </div>

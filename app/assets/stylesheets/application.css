@@ -42,4 +42,5 @@
 #map-canvas {
   width: 30%;
   height: 250px;
+  float: right;
 }
