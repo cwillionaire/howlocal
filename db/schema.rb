@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(version: 20151202142239) do
   add_index "businesses", ["review_id"], name: "index_businesses_on_review_id"
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
 
-  create_table "holo_scores", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.float    "score"
-    t.integer  "business_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
     t.integer  "holo_score"

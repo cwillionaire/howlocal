@@ -1,3 +1,4 @@
+<div class="well">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -36,7 +37,7 @@
     <%= f.text_field :location, placeholder: "Location" %>
   </div>
   <br />
-  <%= f.label "Account Type" %><br>-->
+  <%= f.label "Account Type" %><br>
   <%= f.select :role, ["standard", "admin"],
          {:include_blank => 'Account Type'}, class: "form-control" %>
   <br />
@@ -47,3 +48,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
