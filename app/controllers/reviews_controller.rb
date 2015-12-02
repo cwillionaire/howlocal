@@ -24,6 +24,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1/edit
   def edit
     @businesses = Business.all
+    @business = Business.find(params[:id])
   end
 
   # POST /reviews
@@ -33,7 +34,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        @review.business.calc_average_rating(@review.holo_score, true)   # recalculates average rating the business the review is reviewing
+        @review.business.calc_average_rating(@review.user_rating, true)   # recalculates average rating the business the review is reviewing
         format.html { redirect_to business_path(id: @review.business_id), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
@@ -46,10 +47,10 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
-    old_rating = @review.holo_score
+    old_rating = @review.user_rating
     respond_to do |format|
       if @review.update(review_params)
-        new_rating = @review.holo_score
+        new_rating = @review.user_rating
         @review.business.calc_average_on_update(old_rating, new_rating)
         format.html { redirect_to @review, notice: 'Review was successfully updated.' }
         format.json { render :show, status: :ok, location: @review }
@@ -63,7 +64,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
-    old_rating = @review.holo_score             # the rating of the review that is about to be destroyed
+    old_rating = @review.user_rating             # the rating of the review that is about to be destroyed
     @review.destroy
     respond_to do |format|
       @review.business.calc_average_rating(old_rating, false)    # calculates new average

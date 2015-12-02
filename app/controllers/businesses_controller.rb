@@ -24,6 +24,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses/1/edit
   def edit
+    @business = Business.find(params[:id])
   end
 
   # POST /businesses
