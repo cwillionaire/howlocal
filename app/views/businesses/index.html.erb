@@ -7,18 +7,24 @@
       <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
+             <div class="rightytighty">
+              <div class="panel panel-default">
+                  <%= image_tag("howlocalsmall.png", :alt => "How Local", :class => "holoimgsm") %>
+                <h2 class="holocenter"><%= business.holo_score %></h2>
+
+                </div>
+              </div>
+            
             <h1><%= link_to business.name, business %>
                 <% if business.verified? %>
                   <%= image_tag "badge-verified.png" %>
                 <% end %>
             </h1>
+            <p><%= business.address %></p>
           </div>
           <div class="panel-body">
-            <p>Address: <%= business.street_address %><br />
-            <%= business.city %>, <%= business.state %> <%= business.zip %></p>
-            <h2>HOLO Score: <%= business.holo_score %></h2>
             <h3>Average User Rating: <%= business.average_rating.round(2) %></h3>
-            <h4>About <%= business.name %>: <%= business.description %></h4>
+            <h4>About <%= business.name %>: <%= business.description[0..10] %>... [<%= link_to "Read More", business %>]</h4>
             <p>Created by: <%= business.user.username %></p>
         <%= link_to 'Show', business %> |
         <% if can? :update, business %>

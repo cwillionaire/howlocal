@@ -75,3 +75,18 @@ body { padding-top: 50px;
 .whitefont {
 	color: white;
 }
+
+.rightytighty {
+	float: right;
+}
+
+.holoimg {
+	height: 50px;
+}
+
+.holoimgsm {
+	height: 30px;
+}
+.holocenter {
+	text-align: center;
+}
