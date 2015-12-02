@@ -40,22 +40,26 @@
                 <% chris.times do %>
                   <span class="glyphicon glyphicon-star-empty"></span>
                   <% end %>
-            <h5>About <%= @business.name %>: <%= @business.description %></h5>
-            <% if can? :manage, @business%>
-              <h6><%= link_to ("Documentation Here"), @business.documentation.url, :target => "_blank" %></h6>
-            <% end %>
-          
-            <p class="force-to-bottom">Created by: <%= @business.user.username %></br>
+            <h5>About <%= @business.name %>: <%= @business.description %></h5><br>
+          </div>
+
+          <div class="panel-footer">     
+            <p>Created by: <%= @business.user.username %></br>
             <% if can? :update, @business %>
               <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_business_path(@business) %> | 
             <% end %>
             <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %> |
             <a href="#review_form">Leave a Review</a>
             <br>
+            <% if can? :manage, @business%>
+              <% if @business.documentation.present? %>
+                <h6><%= link_to ("Documentation Here"), @business.documentation.url, :target => "_blank" %></h6>
+              <% else %>
+                No Documentation
+              <% end %>
+            <% end %>
             </p>
-            
           </div>
-        
         </div>
       </div>
       <% @business.reviews.each do |review| %>
@@ -65,21 +69,12 @@
               <h1><%= review.title %></h1>
               <% x = 10 - review.user_rating.to_i %>
               <p>
-
-<!--            <%# "#{review.holo_score}".to_i.times do %>
-                  <span class="glyphicon glyphicon-star"></span>
-                <%# end %>
-                <%# x.to_i.times do %>
-                  <span class="glyphicon glyphicon-star-empty"></span>
-                <%# end %> -->
-
                 <% "#{review.user_rating}".to_i.times do %>
                   <span class="glyphicon glyphicon-star"></span>
                 <% end %>
                 <% x.to_i.times do %>
                   <span class="glyphicon glyphicon-star-empty"></span>
                 <% end %>
-                
               </p>
             </div>
 
@@ -111,11 +106,8 @@
               </div>
               </div>
             </div>
-          
         </div>
-      
     </div>
-
 <br>
 <%= javascript_tag do %>
    latitude = '<%= j @business.latitude.to_s %>';
