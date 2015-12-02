@@ -48,7 +48,11 @@
             <% if can? :update, @business %>
               <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_business_path(@business) %> | 
             <% end %>
-            <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %><br></p>
+            <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %> |
+            <a href="#review_form">Leave a Review</a>
+            <br>
+            </p>
+            
           </div>
         </div>
       </div>
@@ -100,6 +104,7 @@
                 <span class="glyphicon glyphicon-leaf"></span>  Leave a Review:
               </div>
               <div class="panel-body">
+              <a name="review_form"> </a>  
               <%= render 'reviews/form' %>
               </div>
               </div>
