@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'ui/home'
 
-  get 'ui/Home'
+  get 'ui/local'
 
   resources :businesses
   resources :reviews

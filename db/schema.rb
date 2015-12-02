@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201170929) do
+ActiveRecord::Schema.define(version: 20151202142239) do
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "review_id"
@@ -33,10 +33,18 @@ ActiveRecord::Schema.define(version: 20151201170929) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.float    "holo_score"
   end
 
   add_index "businesses", ["review_id"], name: "index_businesses_on_review_id"
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
+
+  create_table "holo_scores", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.float    "score"
+    t.integer  "business_id"
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"

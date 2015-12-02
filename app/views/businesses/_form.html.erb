@@ -52,7 +52,11 @@
     <div class="field">
       <%= f.label :verified %>
       <%= f.check_box :verified %>
+    </div><div class="field">
+      <%= f.label :holo_score %>
+      <%= f.number_field :holo_score %>
     </div>
+    
   <% end %>
   <div class="actions">
     <%= f.submit %>
