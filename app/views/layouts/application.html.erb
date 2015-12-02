@@ -62,7 +62,7 @@
    <%= yield %>
  </div>
   <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd155Aq2Fv9yNoD4YWxchD-AhRz9WL6xo">
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_api_key'] %>">
  </script>
 
 </body>
