@@ -10,7 +10,11 @@
              <div class="rightytighty">
               <div class="panel panel-default">
                   <%= image_tag("howlocalsmall.png", :alt => "How Local", :class => "holoimgsm") %>
-                <h2 class="holocenter"><%= business.holo_score %></h2>
+                <h2 class="holocenter"><%= business.holo_score %>
+                <% if business.holo_score == nil %>
+                  NR
+                <% end %>
+                </h2>
 
                 </div>
               </div>
