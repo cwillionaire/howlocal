@@ -58,10 +58,17 @@
   float: right;
 }
 
-body { padding-top: 50px;}
+body { padding-top: 50px;
+	background: url(intro-bg.jpg);
+    background-size: cover;
+}
 
 .force-to-bottom {
 	position: absolute;
 	bottom: 5%;
+}
+
+.holoheader {
+	color: white;
 }
 
