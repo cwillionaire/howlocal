@@ -40,10 +40,11 @@
                 <% chris.times do %>
                   <span class="glyphicon glyphicon-star-empty"></span>
                   <% end %>
-            <h4>About <%= @business.name %>: <%= @business.description %></h4>
+            <h5>About <%= @business.name %>: <%= @business.description %></h5>
             <% if can? :manage, @business%>
               <h6><%= link_to ("Documentation Here"), @business.documentation.url, :target => "_blank" %></h6>
             <% end %>
+          
             <p class="force-to-bottom">Created by: <%= @business.user.username %></br>
             <% if can? :update, @business %>
               <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_business_path(@business) %> | 
@@ -54,6 +55,7 @@
             </p>
             
           </div>
+        
         </div>
       </div>
       <% @business.reviews.each do |review| %>
