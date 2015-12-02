@@ -10,20 +10,21 @@
                 <%= image_tag "badge-verified.png" %>
               <% end %>
             </h1>
+            <p><%= @business.address %></p> 
           </div>
           <div class="panel-body">
             <p><div id="map-canvas"></div><!-- MAP IS HERE-->
-            Address: <%= @business.address %> </p>
-            <h2>Average User Rating: <%= @business.average_rating.round(2) %></h2>
+            </p>
+            <h3>Average User Rating: <%= @business.average_rating.round(2) %></h3>
             <h4>About <%= @business.name %>: <%= @business.description %></h4>
             <% if can? :manage, @business%>
-              <h4><%= link_to ("Documentation Here"), @business.documentation.url, :target => "_blank" %></h4>
+              <h6><%= link_to ("Documentation Here"), @business.documentation.url, :target => "_blank" %></h6>
             <% end %>
-            <p>Created by: <%= @business.user.username %></p>
+            <p class="force-to-bottom">Created by: <%= @business.user.username %></br>
             <% if can? :update, @business %>
-              <%= link_to 'Edit', edit_business_path(@business) %> | 
+              <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_business_path(@business) %> | 
             <% end %>
-            <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %><br>
+            <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %><br></p>
           </div>
         </div>
       </div>

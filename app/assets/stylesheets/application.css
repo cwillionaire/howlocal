@@ -17,6 +17,13 @@
 	display: none;
 }*/
 
+/*glyphicons start here*/
+.glyphicon-pencil {
+	color: green;
+	font-size: 20px;
+}
+
+
 .glyphicon-star {
 	color: green;
 	font-size: 20px;
@@ -33,6 +40,11 @@
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
+.glyphicon-arrow-left {
+	color: green;
+	font-size: 20px;
+}
+/*glyphicons end!!!*/
 .empty {
 	color: white;
 	opacity: 0.9;
@@ -47,3 +59,9 @@
 }
 
 body { padding-top: 50px;}
+
+.force-to-bottom {
+	position: absolute;
+	bottom: 5%;
+}
+
