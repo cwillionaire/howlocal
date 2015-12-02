@@ -1,2 +1,21 @@
 street_address %><br />
             <%= @business.city %>, <%= @business.state %> <%= @business.zip %></p>
+
+code for nav bar highlights
+        <% if current_page?('/businesses') == true %>
+          <li class="active"><%= link_to "Businesses", businesses_path %></li>
+        <% else %>
+          <li><%= link_to "Businesses", businesses_path  %></li>
+        <% end %>
+
+        <% if current_page?('/reviews') == true %>
+          <li class="active"><%= link_to "Reviews", reviews_path %></li>
+        <% else %>
+          <li><%= link_to "Reviews", reviews_path %></li>
+        <% end %>
+
+        <% if current_page?('/users/edit') == true %>
+          <li class="active"><%= link_to "Edit Profile", edit_user_registration_path %></li>
+        <% else %>
+          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+        <% end %>
