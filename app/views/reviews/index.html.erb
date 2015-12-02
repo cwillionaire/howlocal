@@ -8,9 +8,9 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h1><%= review.title %></h1>
-              <% x = 10 - review.holo_score.to_i %>
+              <% x = 10 - review.user_rating.to_i %>
               <p>HOLO Score:
-                <% "#{review.holo_score}".to_i.times do %>
+                <% "#{review.user_rating}".to_i.times do %>
                   <span class="glyphicon glyphicon-star"></span>
                 <% end %>
                 <% x.to_i.times do %>

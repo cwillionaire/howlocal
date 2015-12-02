@@ -5,18 +5,41 @@
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">
+            <div class="rightytighty">
+              <h1>
+              <% z = 10 - @business.holo_score.to_i %>
+              <%= image_tag("howlocalsmall.png", :alt => "How Local", :class => "holoimg") %>
+            </br>
+                <% "#{@business.holo_score}".to_i.times do %>
+                  <span class="glyphicon glyphicon-leaf"></span>
+                <% end %>
+                <% z.to_i.times do %>
+                  <span class="glyphicon glyphicon-leaf empty"></span>
+                  <% end %>
+                <br>
+                </h1>
+            </div>
             <h1><%= @business.name %>
               <% if @business.verified? %>
                 <%= image_tag "badge-verified.png" %>
               <% end %>
             </h1>
-            <p><%= @business.address %></p> 
+            <p><%= @business.address %></p>
+          </br>
+        </br>
           </div>
+
           <div class="panel-body">
             <p><div id="map-canvas"></div><!-- MAP IS HERE-->
             </p>
-            <h2>HOLO Score: <%= @business.holo_score %></h2>
-            <h3>Average User Rating: <%= @business.average_rating.round(2) %></h3>
+            <h3>Average User Rating:</h3>
+            <% chris = 10 - @business.average_rating.round.to_i %>
+                <% "#{@business.average_rating.round}".to_i.times do %>
+                  <span class="glyphicon glyphicon-star "></span>
+                <% end %>
+                <% chris.times do %>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                  <% end %>
             <h4>About <%= @business.name %>: <%= @business.description %></h4>
             <% if can? :manage, @business%>
               <h6><%= link_to ("Documentation Here"), @business.documentation.url, :target => "_blank" %></h6>
@@ -35,7 +58,7 @@
             <div class="panel-heading">
               <h1><%= review.title %></h1>
               <% x = 10 - review.user_rating.to_i %>
-              <p>User Rating:
+              <p>
 
 <!--            <%# "#{review.holo_score}".to_i.times do %>
                   <span class="glyphicon glyphicon-star"></span>
@@ -45,10 +68,10 @@
                 <%# end %> -->
 
                 <% "#{review.user_rating}".to_i.times do %>
-                  <span class="glyphicon glyphicon-leaf"></span>
+                  <span class="glyphicon glyphicon-star"></span>
                 <% end %>
                 <% x.to_i.times do %>
-                  <span class="glyphicon glyphicon-leaf empty"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
                 <% end %>
                 
               </p>
@@ -56,7 +79,7 @@
 
             <div class="panel-body">
               <p>
-                <h3><%= review.comment %></h3>
+                <h3><%= review.comment[0..20] %>...[<%= link_to "Read More", review %>]</h3>
               </p>
               <p>by:<%= review.user.username %></p>
               <h4><%= link_to 'Show', review %> | 
