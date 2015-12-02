@@ -16,7 +16,8 @@
           <div class="panel-body">
             <p>Address: <%= business.street_address %><br />
             <%= business.city %>, <%= business.state %> <%= business.zip %></p>
-            <h2>HOLO Score: <%= business.average_rating %></h2>
+            <h2>HOLO Score: </h2>
+            <h3>Average User Rating: <%= business.average_rating %></h3>
             <h4>About <%= business.name %>: <%= business.description %></h4>
             <p>Created by: <%= business.user.username %></p>
         <%= link_to 'Show', business %> |

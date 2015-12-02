@@ -14,7 +14,7 @@
           <div class="panel-body">
             <p><div id="map-canvas"></div><!-- MAP IS HERE-->
             Address: <%= @business.address %> </p>
-            <h2>HOLO Score: <%= @business.average_rating %></h2>
+            <h2>Average User Rating: <%= @business.average_rating %></h2>
             <h4>About <%= @business.name %>: <%= @business.description %></h4>
             <% if can? :manage, @business%>
               <h4><%= link_to ("Documentation Here"), @business.documentation.url, :target => "_blank" %></h4>

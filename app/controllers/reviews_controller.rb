@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-       @review.business.calc_average_rating(@review.holo_score, true)   # recalculates average rating the business the review is reviewing
+        @review.business.calc_average_rating(@review.holo_score, true)   # recalculates average rating the business the review is reviewing
         format.html { redirect_to business_path(id: @review.business_id), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
