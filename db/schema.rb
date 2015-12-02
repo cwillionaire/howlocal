@@ -14,8 +14,6 @@
 ActiveRecord::Schema.define(version: 20151202155536) do
 
   create_table "businesses", force: :cascade do |t|
-    t.integer  "review_id"
-    t.integer  "user_id"
     t.string   "name"
     t.string   "street_address"
     t.string   "city"
@@ -25,6 +23,8 @@ ActiveRecord::Schema.define(version: 20151202155536) do
     t.string   "description"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "review_id"
+    t.integer  "user_id"
     t.string   "documentation_file_name"
     t.string   "documentation_content_type"
     t.integer  "documentation_file_size"
@@ -39,13 +39,20 @@ ActiveRecord::Schema.define(version: 20151202155536) do
   add_index "businesses", ["review_id"], name: "index_businesses_on_review_id"
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
 
+  create_table "holo_scores", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.float    "score"
+    t.integer  "business_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
     t.integer  "user_rating"
-    t.integer  "business_id"
-    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "business_id"
+    t.integer  "user_id"
     t.string   "title"
   end
 
