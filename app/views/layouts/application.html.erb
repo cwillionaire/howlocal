@@ -37,8 +37,8 @@
                       <li><%= link_to "Businesses", businesses_path  %></li>
                     <% end %>
 
-                    <% if current_page?('/reviews') == true %>
-                      <li class="active"><%= link_to "Reviews", reviews_path %></li>
+                    <% if current_page?('/ui/local') == true %>
+                      <li class="active"><%= link_to "Rating System", ui_local_path %></li>
                     <% else %>
                       <li><%= link_to "Local Criteria", ui_local_path %></li>
                     <% end %>
