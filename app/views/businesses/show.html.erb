@@ -32,7 +32,7 @@
           <div class="panel-body">
             <p><div id="map-canvas"></div><!-- MAP IS HERE-->
             </p>
-            <h3>Average User Rating:</h3>
+            <h3>Average User Rating:</h3> <% @business.average_rating.round.to_i %>
             <% chris = 10 - @business.average_rating.round.to_i %>
                 <% "#{@business.average_rating.round}".to_i.times do %>
                   <span class="glyphicon glyphicon-star "></span>
