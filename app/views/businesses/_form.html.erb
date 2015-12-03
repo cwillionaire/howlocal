@@ -13,48 +13,48 @@
   
   <div class="field">
     <%= f.label :documentation %>
-    <%= f.file_field :documentation %>
+    <%= f.file_field :documentation, class: "form-control" %>
   </div>
 
   <div class="hidden">
     <%= f.label :user_id %><br>
-    <%= f.text_field :user_id, value: current_user.id %>
+    <%= f.text_field :user_id, value: current_user.id, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :street_address %><br>
-    <%= f.text_field :street_address %>
+    <%= f.text_field :street_address, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.text_field :state, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :zip %><br>
-    <%= f.number_field :zip %>
+    <%= f.number_field :zip, class: "form-control" %>
   </div>
   <div class="field hidden">
     <%= f.label :average_rating %><br>
-    <%= f.text_field :average_rating %>
+    <%= f.text_field :average_rating, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
   <% if current_user.role == "admin" %>
     <div class="field">
-      <%= f.label :verified %>
       <%= f.check_box :verified %>
+      <%= f.label :verified %>
     </div><div class="field">
       <%= f.label :holo_score %>
-      <%= f.number_field :holo_score %>
+      <%= f.number_field :holo_score, class: "form-control" %>
     </div>
     
   <% end %>

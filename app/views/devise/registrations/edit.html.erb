@@ -1,4 +1,5 @@
-<div class="well">
+<div class = "col-md-4"></div>
+<div class = "col-md-4 well">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -16,32 +17,32 @@
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, placeholder: "YOUR NAME" %>
+    <%= f.text_field :name, placeholder: "YOUR NAME", class: "form-control" %>
   </div>
   <br />
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, placeholder: "@username" %>
+    <%= f.text_field :username, placeholder: "@username", class: "form-control" %>
   </div>
   <br />
   <div class="field">
     <%= f.label :location %><br />
-    <%= f.text_field :location, placeholder: "Location" %>
+    <%= f.text_field :location, placeholder: "Location", class: "form-control" %>
   </div>
   <br />
      <%= f.label "Account Type" %><br>
@@ -59,3 +60,5 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+  </div>
+  <div class = "col-md-4"></div>
