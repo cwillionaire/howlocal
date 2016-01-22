@@ -33,20 +33,20 @@
             <p><div id="map-canvas"></div><!-- MAP IS HERE-->
             </p>
             <h3>Average User Rating:</h3> <% @business.average_rating.round.to_i %>
-            <% chris = 10 - @business.average_rating.round.to_i %>
+            <% star = 10 - @business.average_rating.round.to_i %>
                 <% "#{@business.average_rating.round}".to_i.times do %>
                   <span class="glyphicon glyphicon-star "></span>
                 <% end %>
-                <% chris.times do %>
+                <% star.times do %>
                   <span class="glyphicon glyphicon-star-empty"></span>
                   <% end %>
-            <h5>About <%= @business.name %>: <%= @business.description %></h5><br>
+            <h5>About <%= @business.name %>: </h5><%= simple_format @business.description %><br>
           </div>
 
-          <div class="panel-footer">     
+          <div class="panel-footer">
             <p>Created by: <%= @business.user.username %></br>
             <% if can? :update, @business %>
-              <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_business_path(@business) %> | 
+              <span class="glyphicon glyphicon-pencil"></span><%= link_to 'Edit', edit_business_path(@business) %> |
             <% end %>
             <span class="glyphicon glyphicon-arrow-left"></span> <%= link_to 'Back', businesses_path %> |
             <a href="#review_form">Leave a Review</a>
@@ -83,9 +83,9 @@
                 <h3><%= review.comment[0..20] %>...[<%= link_to "Read More", review %>]</h3>
               </p>
               <p>by:<%= review.user.username %></p>
-              <h4><%= link_to 'Show', review %> | 
+              <h4><%= link_to 'Show', review %> |
                 <% if can? :update, review %>
-                  <%= link_to 'Edit', edit_review_path(review) %>  | 
+                  <%= link_to 'Edit', edit_review_path(review) %>  |
                 <% end %>
                 <% if can? :destroy, review %>
                   <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -101,7 +101,7 @@
                 <span class="glyphicon glyphicon-leaf"></span>  Leave a Review:
               </div>
               <div class="panel-body">
-              <a name="review_form"> </a>  
+              <a name="review_form"> </a>
               <%= render 'reviews/form' %>
               </div>
               </div>

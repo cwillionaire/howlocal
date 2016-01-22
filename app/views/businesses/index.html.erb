@@ -18,7 +18,7 @@
 
                 </div>
               </div>
-            
+
             <h1><%= link_to business.name, business %>
                 <% if business.verified? %>
                   <%= image_tag "badge-verified.png" %>
@@ -32,7 +32,7 @@
             <p>Created by: <%= business.user.username %></p>
         <%= link_to 'Show', business %> |
         <% if can? :update, business %>
-          <%= link_to 'Edit', edit_business_path(business) %> | 
+          <%= link_to 'Edit', edit_business_path(business) %> |
         <% end %>
         <% if can? :destroy, business %>
           <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -43,6 +43,4 @@
     <% end %>
   </div>
 
-<br>
-
-<%= link_to 'New Business', new_business_path %>
+<%= link_to 'New Business', new_business_path, class: "btn btn-primary" %>
